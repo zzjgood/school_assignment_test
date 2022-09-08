@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "20 23 * * *"
+    - cron: "30 3 * * *"
     # 每天9.30 '30 9 * * *'
     # 每小时执行 '0 * * * *'
 
@@ -29,7 +29,7 @@ jobs:
           npm install tough-cookie         
 
       - name: Run Auto SignIn
+          run: node ./index.js  #脚本存在根目录scripts文件夹下
           env:
-          COOKIES: ${{ secrets.COOKIES }}    
-          QQ_SENDER: ${{ secrets.QQ_SENDER }}
-          node ./index.js  #脚本存在根目录scripts文件夹下
+            COOKIES: ${{ secrets.COOKIES }}    
+            QQ_SENDER: ${{ secrets.QQ_SENDER }}
