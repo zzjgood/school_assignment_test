@@ -29,7 +29,7 @@ jobs:
           npm install tough-cookie         
 
       - name: Run Auto SignIn
-          run: node ./index.js  #脚本存在根目录scripts文件夹下
-          env:
-            COOKIES: ${{ secrets.COOKIES }}    
-            QQ_SENDER: ${{ secrets.QQ_SENDER }}
+        run: node ./index.js  #脚本存在根目录scripts文件夹下
+        env:
+          COOKIES: ${{ secrets.COOKIES }}    
+          QQ_SENDER: ${{ secrets.QQ_SENDER }}
