@@ -1,5 +1,5 @@
-const dotenv = require('dotenv');
-dotenv.config({ path: './config.env' });
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 const config = require("./config");
 const emailHelper = require("./emailHelper.js");
 const puppeteer = require("puppeteer-extra");
@@ -56,7 +56,7 @@ async function start() {
 
   // 在无头浏览器控制台执行
   const evalResult = await page.evaluate(
-    async (args) => { 
+    async (args) => {
       let [result, config] = args;
       const checkIn = () =>
         fetch(config.url.signInApi, {
@@ -87,20 +87,23 @@ async function start() {
   );
 
   let today = new Date();
-  let emailTitle = "自动签到失败！";
+  let emailTitle = "";
   const { code = -1, message = "未知消息", list = [] } = evalResult;
   console.log("evalResult: ", evalResult);
   const business = list[0] && list[0].business;
   if (business) today = business.split(":")[2];
-  if (code === 0) {
-    emailTitle = "自动签到成功！";
-  } else if (code === 1) {
-    emailTitle = "今日已签到成功！";
-  }
   const emailContentMsg = `${today}：\n【Code:${code}\n【Message:${message}】`;
   console.log("emailContentMsg: ", emailContentMsg);
-  emailHelper.send({ text: emailContentMsg, subject: emailTitle });
+  if (code === 1) {
+    emailTitle = "今日已签到成功！";
+  } else if (code === 0) {
+    emailTitle = "自动签到成功！";
+    emailHelper.send({ text: emailContentMsg, subject: emailTitle });
+  } else {
+    emailTitle = "自动签到失败！";
+    emailHelper.send({ text: emailContentMsg, subject: emailTitle });
+  }
   await browser.close();
 }
 
-start(); 
+start();
