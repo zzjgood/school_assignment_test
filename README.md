@@ -14,6 +14,7 @@ QQ_SENDER=QQ邮箱&&PSSS
 - QQ_SENDER不填也可以，就不会发送邮件
 - COOKIES 比填，模拟登录状态，获取方法如下↓
 ##### 获取 Cookie 值
+
 ![image](https://user-images.githubusercontent.com/47493118/216208331-e809dbe4-22a0-4269-9966-a86cb538a736.png)
 
 
