@@ -1,5 +1,6 @@
 # glados_auto_signIn
 glados 自动签到 qq邮箱发送通知
+![image](https://user-images.githubusercontent.com/47493118/216204672-5eaa5398-bd88-4b65-b1fa-261b5afedb0e.png)
 
 #### Fork 本仓库
 
