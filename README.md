@@ -1,8 +1,3 @@
-#### Fork 本仓库
-
-开启自动任务，设置环境变量
-<img width="1368" alt="image" src="https://user-images.githubusercontent.com/47493118/189161193-c68be096-4af8-4784-ab83-f567ec8bcdc4.png">
-
 #### 环境变量值
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/47493118/189162061-362ad1cd-3969-4e06-99eb-c825bbb5d8bc.png">
 COOKIES=COOKIE的值
